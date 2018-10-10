@@ -16,7 +16,7 @@
                     <button 
                         class="btn btn-success"
                         @click="buyStock"
-                        :disabled="quantity <= 0 || !Number.isInteger(quantity)">Buy</button>
+                        :disabled="quantity <= 0">Buy</button>
                 </div>
             </div>
         </div>
@@ -39,6 +39,7 @@ export default {
                 quantity: this.quantity
             };
             console.log(order);
+            this.$store.dispatch('buyStock', order);
             this.quantity =0;
         }
     }
