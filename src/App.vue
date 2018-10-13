@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <app-header-image></app-header-image>
         <app-header></app-header>
         <div class="row">
             <div class="col-xs-12">
@@ -14,11 +15,13 @@
 </template>
 
 <script>
-    import Header from './components/Header.vue'
+    import Header from './components/Header.vue';
+    import HeaderImage from './components/HeaderImage.vue'
 
     export default {
         components: {
             appHeader: Header,
+            appHeaderImage: HeaderImage,
         },
         created() {
             this.$store.dispatch('initStocks');
